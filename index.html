@@ -987,6 +987,7 @@
       <li><a href="#export">Export</a></li>
       <li><a href="#regulatory">Regulatory</a></li>
       <li><a href="#innovation">Trends</a></li>
+      <li><a href="#appliances">Appliances</a></li>
       <li><a href="#playbooks">Playbooks</a></li>
 
       <li class="nav-divider" aria-hidden="true"></li>
@@ -2232,6 +2233,600 @@
   </div>
 
   <p style="font-size: 12px; color: var(--muted); margin-top: 20px; font-style: italic;"><b>Methodology note for this section:</b> entries are inferred from open-source observation (manufacturer websites, retailer listings, news coverage) rather than primary launch announcements. Where a specific year is cited, it has a primary source; otherwise the entry is timing-agnostic. This section should be treated as <b>trend signal</b>, not as a verified launch calendar. Specific product launches sometimes appear earlier in trade than retail and the public record is incomplete.</p>
+</section>
+
+<div class="ornament">· · ·</div>
+
+<!-- ===== KITCHEN APPLIANCES (added Oct 2026) ===== -->
+<style>
+  #appliances .ap-note {
+    font-size: 12.5px; color: var(--muted); margin: 0 0 22px; line-height: 1.6;
+    border-left: 3px solid var(--muted); padding-left: 12px;
+  }
+  #appliances .ap-sub {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px;
+    color: var(--accent-cinnamon); letter-spacing: -0.02em;
+    margin: 44px 0 6px;
+  }
+  #appliances .ap-sub-desc { font-size: 14px; color: var(--ink-soft); max-width: 760px; margin-bottom: 18px; }
+  #appliances .ap-tests {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;
+    margin: 18px 0 6px;
+  }
+  #appliances .ap-test {
+    background: var(--bg-warm); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; font-size: 13px; color: var(--ink-soft); line-height: 1.5;
+  }
+  #appliances .ap-test b {
+    display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-paprika); margin-bottom: 4px;
+  }
+  #appliances .ap-bench {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px;
+  }
+  #appliances .ap-bench.ap-regions { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  #appliances .ap-region, #appliances .ap-bench-card {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 20px; box-shadow: var(--shadow);
+  }
+  #appliances .ap-region h4, #appliances .ap-bench-card h4 {
+    font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700;
+    color: var(--accent-cinnamon); margin-bottom: 2px;
+  }
+  #appliances .ap-kicker {
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--muted); font-weight: 600; margin-bottom: 10px;
+  }
+  #appliances .ap-region p, #appliances .ap-bench-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  #appliances .ap-region p + p, #appliances .ap-bench-card p + p { margin-top: 8px; }
+
+  /* Ranked categories */
+  #appliances .ap-rank-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px;
+  }
+  #appliances .ap-rank {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 24px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  #appliances .ap-rank::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent-turmeric);
+  }
+  #appliances .ap-rank.durable::before { background: #1a7a35; }
+  #appliances .ap-rank.fad::before { background: var(--accent-paprika); }
+  #appliances .ap-rank.niche::before { background: var(--muted); }
+  #appliances .ap-rank.wide { grid-column: 1 / -1; }
+  #appliances .ap-rank-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+  #appliances .ap-rank-no {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 34px; line-height: 1;
+    color: var(--line); letter-spacing: -0.03em; min-width: 44px;
+  }
+  #appliances .ap-rank h3 {
+    font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; line-height: 1.2;
+    color: var(--accent-clove); margin-bottom: 6px;
+  }
+  #appliances .ap-verdict {
+    display: inline-block; padding: 2px 9px; border-radius: 10px;
+    font-size: 11px; font-weight: 600; font-family: 'Inter', sans-serif;
+  }
+  #appliances .v-durable  { background: #1a7a35; color: #fff; }
+  #appliances .v-reinvent { background: #d4ecd5; color: #2d6334; }
+  #appliances .v-fad      { background: #f8d4cb; color: #8b2418; }
+  #appliances .v-steady   { background: #fde7c0; color: #7a4f12; }
+  #appliances .v-niche    { background: #ede7d6; color: #5e5440; }
+  #appliances .ap-facts {
+    display: grid; grid-template-columns: 128px 1fr; gap: 8px 16px;
+    font-size: 13px; line-height: 1.5; margin: 0;
+  }
+  #appliances .ap-facts dt {
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent-cinnamon); font-weight: 700; padding-top: 2px;
+  }
+  #appliances .ap-facts dd { color: var(--ink-soft); margin: 0; }
+  #appliances .ap-rank:not(.wide) .ap-facts { grid-template-columns: 1fr; gap: 2px 0; }
+  #appliances .ap-rank:not(.wide) .ap-facts dd { margin-bottom: 8px; }
+  #appliances .ap-take {
+    margin-top: 14px; padding-top: 12px; border-top: 1px dotted var(--line);
+    font-size: 13px; color: var(--ink); line-height: 1.55;
+  }
+
+  /* Summary table */
+  #appliances .ap-sum table { min-width: 1180px; font-size: 12.5px; }
+  #appliances .ap-sum td { padding: 12px 12px; line-height: 1.45; }
+  #appliances .ap-sum td.item { font-size: 14.5px; min-width: 160px; }
+
+  /* Caveats + sources */
+  #appliances .methodology { margin-top: 18px; }
+  #appliances .ap-sources {
+    margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px;
+  }
+  #appliances .ap-sources summary {
+    cursor: pointer; font-family: 'Fraunces', serif; font-weight: 700; font-size: 17px;
+    color: var(--accent-cinnamon);
+  }
+  #appliances .ap-sources ol {
+    margin-top: 12px; padding-left: 22px; columns: 2 320px; column-gap: 32px;
+    font-size: 12.5px; line-height: 1.55;
+  }
+  #appliances .ap-sources li { margin-bottom: 4px; break-inside: avoid; }
+  #appliances .ap-sources a { color: var(--accent-paprika); text-decoration: none; border-bottom: 1px solid rgba(181,58,31,0.25); }
+  #appliances .ap-sources a:hover { border-bottom-color: var(--accent-paprika); }
+
+  @media (max-width: 768px) {
+    #appliances .ap-rank-grid, #appliances .ap-bench { grid-template-columns: 1fr; }
+    #appliances .ap-rank { padding: 18px 18px; }
+    #appliances .ap-rank h3 { font-size: 18px; }
+    #appliances .ap-rank-no { font-size: 28px; min-width: 36px; }
+    #appliances .ap-facts { grid-template-columns: 1fr; gap: 2px 0; }
+    #appliances .ap-facts dd { margin-bottom: 8px; }
+    #appliances .ap-sub { font-size: 20px; margin-top: 34px; }
+    #appliances .ap-sources ol { columns: 1; }
+  }
+</style>
+
+<section class="block" id="appliances">
+  <div class="section-head">
+    <div class="num">◎</div>
+    <div>
+      <div class="title">Beyond the air fryer: kitchen appliances to watch</div>
+      <div class="desc">Which small electric kitchen appliances have grown fastest from late 2023 to October 2026, and which look like a genuine "next air fryer" rather than a short fad. Covers global data plus North America, Europe, China, East Asia (Japan, Korea) and Southeast Asia, using market trackers, company results, e-commerce rankings and social-media signals.</div>
+      <div class="pill">Small kitchen appliances · Late 2023 – Oct 2026 · 6 regions</div>
+    </div>
+  </div>
+
+  <p class="ap-note"><b>Adjacent-market read, added October 2026.</b> This tab sits outside the spice shelf: it tracks the appliances Malaysian and global households are buying, not the seasonings that go in them. Figures come from tracked retail data (Circana, AVC, NIQ/GfK) and company filings wherever possible; US 2026 numbers are Circana <i>forecasts</i>, and China's 2025 numbers were lifted by a national trade-in subsidy. See the caveats at the end of this tab.</p>
+
+  <!-- Headline cards -->
+  <div class="grid-cards">
+    <div class="card cardamom">
+      <div class="lab">Most durable wave · home espresso</div>
+      <div class="num">+16.5%</div>
+      <div class="desc">Circana's 2026 forecast for US espresso-maker dollar sales. It's the only category growing at double-digit rates in North America, Europe and Asia at once: De'Longhi grew 10.4% at constant currency in 2025, and China's offline coffee-machine sales rose 65% in H1 2026 while the wider kitchen market shrank.</div>
+    </div>
+    <div class="card paprika">
+      <div class="lab">Fastest, but volatile · frozen treats</div>
+      <div class="num">2.4×</div>
+      <div class="desc">SharkNinja's Food Preparation segment, home of the Ninja CREAMi and SLUSHi, grew from $654M in FY2023 to $1,551M in FY2025. Frozen-drink sales then fell in Q1 2026, pulling the segment down 3.3%.</div>
+    </div>
+    <div class="card cinnamon">
+      <div class="lab">Quiet record-setter · all-in-one cookers</div>
+      <div class="num">1.4M+</div>
+      <div class="desc">Thermomix units Vorwerk sold in 2025, a company record, up from about 1.2M in 2024. More than 1M were the new TM7, and Culinary revenue rose 23.9% to €2.1B.</div>
+    </div>
+    <div class="card">
+      <div class="lab">The benchmark · air fryer</div>
+      <div class="num">+15.6%</div>
+      <div class="desc">Circana's 2026 forecast for US air-fryer dollar sales. The category isn't dead: China's sales roughly halved in 2023, then returned to growth in 2025 on steam and glass-window redesigns. In Southeast Asia it is still the top-selling cooking category online.</div>
+    </div>
+  </div>
+
+  <!-- Benchmark -->
+  <div class="ap-sub">1 · The benchmark: what the air-fryer wave looked like</div>
+  <div class="ap-sub-desc">Each region is at a different point on the air-fryer curve, which is what makes it a useful yardstick for the categories below.</div>
+
+  <div class="ap-bench">
+    <div class="ap-bench-card">
+      <h4>China</h4>
+      <div class="ap-kicker">Boom → bust → redesign</div>
+      <p>AVC data show online volume up 55.1% and value up 49.2% in 2022; GfK China put the 2022 online market at RMB 6.62B, bigger than microwaves or electric ovens. In H1 2023 online value fell 50.6% and volume 44.8%, and the decline ran through 2024.</p>
+      <p>Recovery came from new designs, not repeat buyers: Jan–Oct 2025 online value +9.5%, full-year 2025 online sales RMB 2.45B (+8%). Steam-function models rose from under 30% share in 2023 to 67% at Double 11 2025; visible-window models reached 77%.</p>
+    </div>
+    <div class="ap-bench-card">
+      <h4>United States</h4>
+      <div class="ap-kicker">Still growing</div>
+      <p>Circana names air fryers, espresso makers, ice shavers and stand mixers as the 2025 growth leaders in a flat market: home and housewares fell 0.5% to $77.12B, while small appliances rose 1% to $44.94B.</p>
+      <p>Circana forecasts air-fryer dollar sales up 15.6% in 2026 as 2020–21 purchases come up for replacement. Among recent buyers, 49% were first-time owners, 27% replacing and 24% upgrading or adding a second unit. Glass-container models such as the Ninja Crispi are renewing the category.</p>
+    </div>
+    <div class="ap-bench-card">
+      <h4>Europe</h4>
+      <div class="ap-kicker">Mature, steady</div>
+      <p>GfK's Outlook 2024 recorded hot-air fryers as one of the strongest small-appliance categories of 2023, with growth in the high-30s percent. Forecasters now put European growth in mid-to-high single digits; Grand View, for example, projects a 6.8% CAGR for 2026–2033.</p>
+    </div>
+    <div class="ap-bench-card">
+      <h4>Southeast Asia</h4>
+      <div class="ap-kicker">Still in the first wave</div>
+      <p>On Shopee and Lazada, air fryers hold 56.7% of the rice cooker / air fryer / food processor segment, which is 12.9% of all appliance e-commerce (TMO Group, 2025). Demand is especially strong in Thailand and the Philippines.</p>
+      <p>In Malaysia the category is crowded enough that Shopee ad bids have surged. Statista models the regional air-fryer market at US$229M in 2025, growing at a 9.6% CAGR.</p>
+    </div>
+  </div>
+
+  <div class="ap-tests">
+    <div class="ap-test"><b>Test 1 · Buyer pool</b>A large group of households who have never owned one.</div>
+    <div class="ap-test"><b>Test 2 · Low ownership</b>Starting penetration low enough to leave years of first-time sales.</div>
+    <div class="ap-test"><b>Test 3 · Redesign path</b>A way to sell an upgrade once the first buyers are saturated.</div>
+  </div>
+  <p class="ap-note" style="margin-top:12px;">A genuine "air fryer-like" wave passes all three tests. The ranked categories below are judged against them.</p>
+
+  <!-- Ranked categories -->
+  <div class="ap-sub">2 · Ranked: the fastest-growing categories</div>
+  <div class="ap-sub-desc">Ordered by the strength and spread of the growth evidence, with a verdict on how durable each looks.</div>
+
+  <div class="ap-rank-grid">
+
+    <div class="ap-rank durable wide">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">01</span>
+        <div>
+          <h3>Home espresso &amp; automatic (bean-to-cup) coffee machines</h3>
+          <span class="ap-verdict v-durable">Durable · multi-region wave</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>North America</dt>
+        <dd>Circana lists espresso makers and frothers among the fastest-growing US home categories in 2025 and forecasts espresso-maker dollar sales up 16.5% in 2026; with air fryers that's about $245M of extra sales. SharkNinja credits its Ninja Luxe Café for Cooking &amp; Beverage growth of 19.8% in Q1 2026 and 36.5% in Q2 2026, and launched the fully automatic AutoBarista at $949. Breville reports strong Barista Express growth in the Americas.</dd>
+        <dt>Europe</dt>
+        <dd>De'Longhi's 2025 revenue reached €3.80B (+8.7%, +10.4% at constant currency), with management pointing to a structural shift toward home coffee; manual machines drove high-single-digit coffee growth. H1 2026 revenue was €1,676M (+8.0% cc); home coffee accelerated to mid-single digits in Q2, and the professional division (La Marzocco, Eversys) grew 36.3%. SharkNinja is taking espresso into Spain and Italy.</dd>
+        <dt>China</dt>
+        <dd>One of the few categories still growing in a shrinking market (AVC): H1 2026 retail sales +6% online and +65% offline. Fully automatic machines were named a hit new product of 2025.</dd>
+        <dt>East Asia</dt>
+        <dd>Panasonic's NC-A58 fully automatic coffee maker sold 2.3× its predecessor in Apr 2025–Jan 2026 and ran a one-month wait; more fully automatic models now sell under ¥20,000. In Korea, Breville launched the Oracle Jet and Coupang launched Philips' Baristina as an exclusive. Breville's newest markets (China, Korea, Mexico, Middle East) grew 74% in FY26.</dd>
+        <dt>Drivers</dt>
+        <dd>Saving money by making café drinks at home, premiumisation, café-at-home social content, and falling prices for automatic machines.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> the most durable wave. Ownership is low in China and the rest of Asia, there's a clear upgrade path (pod → manual → automatic), and accessories bring repeat spending. The curve looks like the air fryer's, but slower and steadier.</p>
+    </div>
+
+    <div class="ap-rank fad wide">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">02</span>
+        <div>
+          <h3>Frozen-treat makers (Ninja CREAMi, SLUSHi, ice shavers)</h3>
+          <span class="ap-verdict v-fad">Explosive · fad risk</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>Scale</dt>
+        <dd>SharkNinja's Food Preparation segment grew from $654M (15% of revenue) in FY2023 to $1,551M (24%) in FY2025. FY2025 growth was 31.6% (+$372M), credited to frozen drinks; Q4 2025 was +28.1%. The SLUSHi, launched July 2024, sold out 10 times in the US with a global waitlist above 170,000 (Bloomberg).</dd>
+        <dt>Warning sign</dt>
+        <dd>Food Prep fell 3.3% in Q1 2026 on lower frozen-drink sales, and H1 2026 was up only 6.3%. Q2 2026 recovered to +13.3%, led by blenders, with management saying frozen treats still grew.</dd>
+        <dt>Social signal</dt>
+        <dd>CREAMi took off on TikTok through protein ice-cream recipes (about 30 g of protein per pint); its subreddit drew about 62,000 weekly visitors (Bloomberg, 2025). CREAMi hit record-low pricing in January 2026. Circana lists ice shavers and snow-cone makers among 2025's growth leaders, NIQ flags frozen-dessert makers as suited to social commerce in Western Europe, and CREAMi launched in India in October 2026 at ₹34,999.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> a hit with fad risk. The ice-cream maker looks sticky because it rides the long-running protein and fitness trend; the frozen-drink maker behaves like a seasonal fad and has already posted a decline.</p>
+    </div>
+
+    <div class="ap-rank durable wide">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">03</span>
+        <div>
+          <h3>All-in-one cooking machines (Thermomix-type)</h3>
+          <span class="ap-verdict v-durable">Durable in Europe · niche elsewhere</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>Europe</dt>
+        <dd>Vorwerk sold 1.4M+ Thermomix units in 2025 (about 1.2M in 2024); over 1M were the €1,549 TM7, its most successful launch. Group revenue hit a record €3.6B (+14.1%); Culinary €2.1B (+23.9%). Germany +26%, Spain culinary revenue +25.7% to €147M.</dd>
+        <dt>China</dt>
+        <dd>Home cooking robots are small and volatile: H1 2024 online sales RMB 130M (+41.2%) on 67,000 units, against 4M+ robot vacuums shipped a year. Commercial kitchens are adopting faster than homes.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> durable, but driven by product cycles and direct selling rather than a broad consumer wave.</p>
+    </div>
+
+    <div class="ap-rank">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">04</span>
+        <div>
+          <h3>Blenders &amp; health drink makers</h3>
+          <span class="ap-verdict v-steady">Steady · health-driven</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>US</dt>
+        <dd>Circana lists single-serve blenders among 2025's top growth categories; blending was SharkNinja's standout in Q2 2026.</dd>
+        <dt>China</dt>
+        <dd>Health appliances led Q1 2025: health kettles +29.9%, soymilk makers +9.7%, steamers +6.7%. High-speed blenders returned to growth (+2.2%) on self-cleaning designs, which reached 7.2% share in 2025.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> steady replacement and upgrade growth, not an air-fryer-style surge.</p>
+    </div>
+
+    <div class="ap-rank">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">05</span>
+        <div>
+          <h3>Premium rice cookers &amp; countertop ovens</h3>
+          <span class="ap-verdict v-steady">Upgrade cycle</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>US</dt>
+        <dd>Circana forecasts rice-cooker dollar sales +11.4% and slow cookers +8.6% in 2026.</dd>
+        <dt>China</dt>
+        <dd>Zero-coating rice cookers +77% in Q1 2025; models above RMB 1,000 reached 18.7% share in H1 2026. Benchtop ovens sold RMB 840M online in 2025 (+10%) and, with air fryers, still lead gains in H1 2026.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> premium upgrades of familiar products, not new categories.</p>
+    </div>
+
+    <div class="ap-rank niche">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">06</span>
+        <div>
+          <h3>Countertop (nugget) ice makers</h3>
+          <span class="ap-verdict v-niche">Plausible niche · unverified</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>Signals</dt>
+        <dd>AVC notes rising ice-maker demand in China in 2025; at 618 in 2026, fridges with ice-making took more than 20% of fridge sales. In the US, the GE Profile Opal 2.0 (about $399–$449) is the reference product.</dd>
+        <dt>Data gap</dt>
+        <dd>Global market-size estimates range from about $90M to $850M, so there's no reliable growth rate.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> real demand, but not a confirmed wave.</p>
+    </div>
+
+    <div class="ap-rank niche">
+      <div class="ap-rank-top">
+        <span class="ap-rank-no">07</span>
+        <div>
+          <h3>Cold-brew coffee function</h3>
+          <span class="ap-verdict v-niche">Tiny base · explosive</span>
+        </div>
+      </div>
+      <dl class="ap-facts">
+        <dt>China</dt>
+        <dd>Coffee machines with cold-brew functions reached RMB 160M in Q1 2025, up 423% (AVC).</dd>
+        <dt>Europe</dt>
+        <dd>Smeg launched a manual espresso machine with fast cold brew in September 2025.</dd>
+      </dl>
+      <p class="ap-take"><b>Verdict:</b> best read as a feature inside the coffee wave, not a category of its own.</p>
+    </div>
+
+  </div>
+
+  <!-- Fads -->
+  <div class="ap-sub">3 · Fads &amp; fade-outs, for contrast</div>
+  <div class="ap-sub-desc">What a short-lived spike looks like, so the categories above can be judged against it.</div>
+
+  <div class="timeline">
+    <div class="innov-item">
+      <div class="innov-date">China · 2023–24</div>
+      <div class="innov-title">"Internet-famous" kitchen gadgets<small>Dumpling machines, stir-fry machines</small></div>
+      <div class="innov-body">Gadgets drew tens to hundreds of millions of TikTok views, then Chinese social platforms filled with posts about unused appliances. China's kitchen small-appliance retail sales fell 9.6% in 2023 to RMB 54.93B and another 0.8% in 2024.</div>
+    </div>
+    <div class="innov-item">
+      <div class="innov-date">China · H1 2023</div>
+      <div class="innov-title">The air-fryer bust<small>Pandemic pull-forward</small></div>
+      <div class="innov-body">The clearest example of demand pulled forward by the pandemic: online value fell about 50% in H1 2023 before redesigned products revived the category.</div>
+    </div>
+    <div class="innov-item">
+      <div class="innov-date">Global · 2024–26</div>
+      <div class="innov-title">SLUSHi-type frozen-drink makers<small>Viral launch, quick fade</small></div>
+      <div class="innov-body">Sold out repeatedly within a year of launch, then dragged SharkNinja's Food Prep segment down in Q1 2026.</div>
+    </div>
+    <div class="innov-item">
+      <div class="innov-date">China · 2025–26</div>
+      <div class="innov-title">"Mini" single-person appliances<small>Saturated</small></div>
+      <div class="innov-body">AVC says the ultra-small-capacity segment has reached saturation for now. Larger formats are growing instead: air fryers of 5.5 L and up, steamers of 14 L and up, ovens of 37 L and up.</div>
+    </div>
+  </div>
+
+  <!-- Regions -->
+  <div class="ap-sub">4 · Region by region</div>
+  <div class="ap-sub-desc">Where each market stands overall, and which categories are carrying growth there.</div>
+
+  <div class="ap-bench ap-regions">
+    <div class="ap-region">
+      <h4>Global</h4>
+      <div class="ap-kicker">Growth concentrated in a few categories</div>
+      <p>NIQ projected 2% value growth for consumer tech and durables in 2025, with small domestic appliances among the better performers. Brand results point to the same winners: SharkNinja posted its 13th straight quarter of double-digit growth in Q2 2026 (sales +22.2% to $1.77B), De'Longhi and Breville are growing on coffee, and Vorwerk on Thermomix.</p>
+    </div>
+    <div class="ap-region">
+      <h4>North America</h4>
+      <div class="ap-kicker">Innovation-led, flat market</div>
+      <p>US home and housewares sales fell 0.5% to $77.12B in 2025 (IHA/Circana), yet small appliances rose 1% to $44.94B. Espresso makers, air fryers, single-serve blenders, kettles, rice cookers and snow-cone makers all grew as people moved their morning routine and more meals back home. Circana forecasts US home-industry dollar sales of $43.7B in 2026 (+2.9%), led by kitchen appliances.</p>
+    </div>
+    <div class="ap-region">
+      <h4>Europe</h4>
+      <div class="ap-kicker">Coffee and Thermomix lead</div>
+      <p>NIQ forecasts Western European small-appliance value growth of 5–7% in 2026, strongest in France, Spain and Italy. Online took 45% of small-appliance value in Western Europe in H1 2025 and 47% of purchases in Eastern Europe. Coffee (De'Longhi; Breville/Sage EMEA +8.5% cc) and Thermomix stand out; air fryers have moved from boom to steady growth.</p>
+    </div>
+    <div class="ap-region">
+      <h4>China</h4>
+      <div class="ap-kicker">Shrinking in volume, moving up in price</div>
+      <p>Kitchen small-appliance retail sales reached RMB 66.3B in 2025 (+3.8%), lifted by the national trade-in subsidy. As it faded, H1 2026 fell 4.8% to RMB 30.26B; volume fell 14.6% while the average price rose 11.5% to RMB 260. Online sales at 618 in 2026 fell 10.1%.</p>
+      <p>The under-RMB 300 tier shrank to 46.5% share; RMB 300–1,000 (33.3%) and RMB 1,000+ (20.2%) gained. Douyin grew 9% in 2025 and instant retail is the new channel. Winners: coffee machines (especially offline), health kettles, soymilk makers, upgraded air fryers, benchtop ovens.</p>
+    </div>
+    <div class="ap-region">
+      <h4>East Asia (Japan, Korea)</h4>
+      <div class="ap-kicker">Thin data, premium coffee signals</div>
+      <p>In Japan, the strongest sign is fully automatic coffee makers moving into the mass market under ¥20,000 (Panasonic 2.3×). In Korea, premium espresso is expanding through Breville and Coupang exclusives. Cuckoo reported a 28% quarter-on-quarter rise in air-fryer units in Q4 2024, suggesting air fryers are in replacement and upgrade mode there.</p>
+    </div>
+    <div class="ap-region">
+      <h4>Southeast Asia</h4>
+      <div class="ap-kicker">Still in the first air-fryer wave</div>
+      <p>Air fryers lead online kitchen sales, and Chinese value brands such as Gaabor sell 4 L models for under US$25 in Malaysia. The market is fragmented: the top five brands hold under 10% combined.</p>
+      <p>Early signs of what comes next: multi-function cookers in Vietnam, smart air fryers in Malaysia, and Wi-Fi coffee machines in Singapore, where Duchess leads coffee machines ahead of Nespresso. Lazada's 11.11 and 9.9 events show big spikes, but results aren't broken out by category.</p>
+    </div>
+  </div>
+
+  <!-- Summary table -->
+  <div class="ap-sub">5 · Summary table</div>
+  <div class="ap-sub-desc">All categories side by side. Scroll sideways on a phone.</div>
+
+  <div class="tbl-wrap ap-sum">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Global / brand signal</th>
+          <th>North America</th>
+          <th>Europe</th>
+          <th>China</th>
+          <th>East Asia</th>
+          <th>SE Asia</th>
+          <th>Assessment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item">Air fryer<span class="my-name">benchmark · dual-zone, glass, steam</span></td>
+          <td>Still a top growth driver (Ninja Crispi)</td>
+          <td>Growing; +15.6% forecast 2026</td>
+          <td>Mature, mid-single-digit</td>
+          <td>Boom 2022 → about −50% in 2023 → +8% in 2025 via redesign</td>
+          <td>Upgrade mode (Cuckoo)</td>
+          <td>Still in first wave; #1 category online</td>
+          <td><span class="ap-verdict v-reinvent">Wave + reinvention</span></td>
+        </tr>
+        <tr>
+          <td class="item">Espresso / automatic coffee</td>
+          <td>De'Longhi +10.4% cc 2025; Breville coffee double-digit</td>
+          <td>+16.5% forecast 2026; Ninja Luxe Café</td>
+          <td>Structural growth; professional +36%</td>
+          <td>H1 2026 offline +65%</td>
+          <td>Panasonic 2.3×; Korea premium growth</td>
+          <td>Emerging (Singapore smart machines)</td>
+          <td><span class="ap-verdict v-durable">Most durable "next air fryer"</span></td>
+        </tr>
+        <tr>
+          <td class="item">Frozen treats<span class="my-name">CREAMi / SLUSHi</span></td>
+          <td>SharkNinja Food Prep $654M → $1.55B (FY23–25)</td>
+          <td>Viral; snow-cone makers growing</td>
+          <td>Social-commerce pick (NIQ)</td>
+          <td>Limited data</td>
+          <td>No data</td>
+          <td>Tokopedia / TikTok listings</td>
+          <td><span class="ap-verdict v-fad">Hit with fad risk</span></td>
+        </tr>
+        <tr>
+          <td class="item">All-in-one cookers<span class="my-name">Thermomix-type</span></td>
+          <td>1.4M+ units 2025 (record)</td>
+          <td>Niche</td>
+          <td>Strong (Germany +26%, Spain +25.7%)</td>
+          <td>Home cooking robots small, volatile</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td><span class="ap-verdict v-durable">Durable, product-cycle</span></td>
+        </tr>
+        <tr>
+          <td class="item">Blenders &amp; health drink makers</td>
+          <td>SharkNinja blending standout 2026</td>
+          <td>Single-serve blenders growing</td>
+          <td>Stable</td>
+          <td>Health kettles +29.9%, soymilk +9.7%</td>
+          <td>n/a</td>
+          <td>Core online category</td>
+          <td><span class="ap-verdict v-steady">Steady, health-driven</span></td>
+        </tr>
+        <tr>
+          <td class="item">Premium rice cookers / countertop ovens</td>
+          <td>—</td>
+          <td>Rice cookers +11.4% forecast</td>
+          <td>—</td>
+          <td>Zero-coating +77%; benchtop ovens +10%</td>
+          <td>Core category</td>
+          <td>Core category</td>
+          <td><span class="ap-verdict v-steady">Upgrade cycle</span></td>
+        </tr>
+        <tr>
+          <td class="item">Nugget ice makers</td>
+          <td>Conflicting market sizes</td>
+          <td>GE Opal reference product</td>
+          <td>—</td>
+          <td>Demand rising</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td><span class="ap-verdict v-niche">Plausible niche, unverified</span></td>
+        </tr>
+        <tr>
+          <td class="item">Cold-brew function</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Smeg launch</td>
+          <td>+423% (tiny base)</td>
+          <td>—</td>
+          <td>—</td>
+          <td><span class="ap-verdict v-niche">Feature within coffee wave</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Caveats -->
+  <div class="methodology">
+    <h3>Caveats on this data</h3>
+    <ul>
+      <li><b>Market-research sizes conflict heavily.</b> Global small-kitchen-appliance estimates range from $34.7B to $108.5B, and nugget-ice estimates from $90M to $850M. This tab relies on tracked retail data (Circana, AVC, NIQ/GfK) and company filings wherever possible.</li>
+      <li><b>Forecasts are not results.</b> Circana's 2026 figures (air fryers +15.6%, espresso +16.5%, rice cookers +11.4%) are forecasts. Circana web figures with no clear time period were not used.</li>
+      <li><b>SharkNinja Food Prep figures are primary.</b> FY2025 comes from the FY2025 Form 10-K; the FY2023 base ($653.6M) from the company's earlier results release; quarterly figures from SEC filings.</li>
+      <li><b>De'Longhi's home-coffee share is reported inconsistently</b> in secondary summaries (52% of either group revenue or Household revenue).</li>
+      <li><b>Japan, Korea and Southeast Asia lack public category-level data.</b> Conclusions there rest on brand reports and e-commerce share snapshots.</li>
+      <li><b>China's 2025 figures are inflated by the national trade-in subsidy;</b> the H1 2026 decline partly reflects the subsidy fading.</li>
+      <li><b>Search-interest indices were not compiled.</b> Google Trends and Baidu Index weren't retrieved directly, so social and search signals rest on secondary reporting (Bloomberg, AVC, TMO Group).</li>
+    </ul>
+  </div>
+
+  <!-- Sources -->
+  <details class="ap-sources">
+    <summary>Sources for this tab (67)</summary>
+    <ol>
+      <li><a href="https://news.cheaa.com/2023/0307/618102.shtml" target="_blank" rel="noopener">CHEAA — China air-fryer market 2022</a></li>
+      <li><a href="https://tech.hexun.com/2023-09-27/210407402.html" target="_blank" rel="noopener">Hexun — China air fryers, H1 2023</a></li>
+      <li><a href="https://news.cheaa.com/2025/1205/651485.shtml" target="_blank" rel="noopener">CHEAA — China air fryers, 2025</a></li>
+      <li><a href="https://www.gfk.com/hubfs/State%20of%20T%20and%20D%20report%20Outlook%202024/Consumer-Technology-&amp;-Durables-Outlook-2024_3.pdf" target="_blank" rel="noopener">GfK — Consumer Technology &amp; Durables Outlook 2024</a></li>
+      <li><a href="https://www.grandviewresearch.com/industry-analysis/europe-small-kitchen-appliances-market-report" target="_blank" rel="noopener">Grand View Research — Europe small kitchen appliances</a></li>
+      <li><a href="https://www.tmogroup.asia/insights/southeast-asia-home-appliances-ecommerce-market/" target="_blank" rel="noopener">TMO Group — SEA home appliances e-commerce</a></li>
+      <li><a href="https://www.tmogroup.asia/insights/southeast-asia-kitchen-appliances-ecommerce-market/" target="_blank" rel="noopener">TMO Group — SEA kitchen appliances e-commerce</a></li>
+      <li><a href="https://www.statista.com/outlook/cmo/household-appliances/small-appliances/air-fryers/southeast-asia" target="_blank" rel="noopener">Statista — Air fryers, Southeast Asia</a></li>
+      <li><a href="https://www.convenience.org/stay-current/news/2025/july/14/3-circana-consumers-want-to-stay-home_research" target="_blank" rel="noopener">NACS — Circana: consumers want to stay home (Jul 2025)</a></li>
+      <li><a href="https://www.financialcontent.com/article/gnwcq-2026-9-24-circana-forecasts-us-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money-and-simplify-life" target="_blank" rel="noopener">Circana — US home market forecast (Sep 2026)</a></li>
+      <li><a href="https://www.manilatimes.net/2026/09/24/tmt-newswire/globenewswire/circana-forecasts-us-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money-and-simplify-life/2432033" target="_blank" rel="noopener">Manila Times — Circana forecast release (Sep 2026)</a></li>
+      <li><a href="https://www.circana.com/post/consumers-are-prioritizing-the-essentials-as-well-as-products-that-bring-joy-to-cost-conscious-at-h" target="_blank" rel="noopener">Circana — consumers prioritising essentials</a></li>
+      <li><a href="https://www.circana.com/industries/appliances" target="_blank" rel="noopener">Circana — Appliances industry page</a></li>
+      <li><a href="https://www.homepagenews.com/retail-articles/circana-sees-a-future-of-retail-dollar-growth-for-home-and-housewares/" target="_blank" rel="noopener">HomePage News — Circana on home &amp; housewares growth</a></li>
+      <li><a href="https://hbsdealer.com/housewares-market-roundup" target="_blank" rel="noopener">HBSDealer — Housewares market roundup</a></li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/0001957132/000195713226000033/exhibit991pressreleaseofsh.htm" target="_blank" rel="noopener">SharkNinja — Q1 2026 results release (SEC)</a></li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/0001957132/000195713226000047/exhibit991pressreleaseofsh.htm" target="_blank" rel="noopener">SharkNinja — Q2 2026 results release (SEC)</a></li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/1957132/000195713226000009/exhibit991pressreleaseofsh.htm" target="_blank" rel="noopener">SharkNinja — results release (SEC)</a></li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/0001957132/000195713226000035/sharkninja-20260331.htm" target="_blank" rel="noopener">SharkNinja — Form 10-Q, Q1 2026 (SEC)</a></li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/0001957132/000195713226000048/sharkninja-20260630.htm" target="_blank" rel="noopener">SharkNinja — Form 10-Q, Q2 2026 (SEC)</a></li>
+      <li><a href="https://www.fool.com/earnings/call-transcripts/2026/08/12/sharkninja-sn-q2-2026-earnings-call-transcript/" target="_blank" rel="noopener">Motley Fool — SharkNinja Q2 2026 call transcript</a></li>
+      <li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-sharkninja-q2-2026-sales-surge-lifts-shares-despite-eps-miss-93CH-4838007" target="_blank" rel="noopener">Investing.com — SharkNinja Q2 2026 call</a></li>
+      <li><a href="https://ir.sharkninja.com/news/news-details/2025/New-Ninja-Swirl-by-CREAMi-is-the-Next-Generation-of-Enjoying-Frozen-Treats-on-Your-Countertop/default.aspx" target="_blank" rel="noopener">SharkNinja IR — Ninja Swirl by CREAMi</a></li>
+      <li><a href="https://www.bloomberg.com/features/2025-sharkninja-tiktok-gadget-empire/" target="_blank" rel="noopener">Bloomberg — SharkNinja's TikTok gadget empire (2025)</a></li>
+      <li><a href="https://eightx.co/blog/sharkninja-teardown" target="_blank" rel="noopener">EightX — SharkNinja teardown</a></li>
+      <li><a href="https://businessmodelanalyst.com/ninja-slushi-twist-sharkninja-frozen-drinks/" target="_blank" rel="noopener">Business Model Analyst — Ninja SLUSHi</a></li>
+      <li><a href="https://www.oaoa.com/people/ice-cream-makers-heat-up-as-the-protein-craze-goes-frozen/" target="_blank" rel="noopener">Odessa American — ice-cream makers and the protein craze</a></li>
+      <li><a href="https://m.thewire.in/article/ptiprnews/viral-global-bestseller-ninja-creami-arrives-in-india" target="_blank" rel="noopener">The Wire (PTI) — Ninja CREAMi launches in India</a></li>
+      <li><a href="https://brevillegroup.com/wp-content/uploads/2026/08/Year-Ended-30-June-2026-Investor-Presentation.pdf" target="_blank" rel="noopener">Breville Group — FY26 investor presentation</a></li>
+      <li><a href="https://financialfilings.com/filings/breville-group-limited/annual-report/2026/56568498/" target="_blank" rel="noopener">Breville Group — 2026 annual report</a></li>
+      <li><a href="https://kalkine.com.au/news/consumer/breville-group-limited-asx-brg-pulls-back-into-reporting-season-is-its-global-premium-appliance-growth-story-still-intact" target="_blank" rel="noopener">Kalkine — Breville growth story</a></li>
+      <li><a href="https://www.gcrmag.com/delonghi-reports-almost-10-per-cent-yoy-revenue-rise/" target="_blank" rel="noopener">GCR — De'Longhi revenue rise</a></li>
+      <li><a href="https://www.comunicaffe.com/de-longhi-2025-net-profit-at-e316-3m-revenues-at-e3-8bn-and-e0-85-dividend-per-share/" target="_blank" rel="noopener">Comunicaffe — De'Longhi 2025 results</a></li>
+      <li><a href="https://www.investing.com/news/company-news/delonghi-h1-2026-slides-ebitda-guidance-raised-on-strong-margins-93CH-4825620" target="_blank" rel="noopener">Investing.com — De'Longhi H1 2026 slides (guidance)</a></li>
+      <li><a href="https://www.investing.com/news/company-news/delonghi-h1-2026-slides-margins-expand-as-professional-business-surges-93CH-4825612" target="_blank" rel="noopener">Investing.com — De'Longhi H1 2026 slides (professional)</a></li>
+      <li><a href="https://www.worldcoffeeportal.com/news/global-coffee-chain-growth-puts-la-marzocco-and-eversys-in-the-spotlight-for-delonghi/" target="_blank" rel="noopener">World Coffee Portal — La Marzocco &amp; Eversys</a></li>
+      <li><a href="https://www.watch.impress.co.jp/docs/topic/2086489.html" target="_blank" rel="noopener">Impress Watch — Panasonic fully automatic coffee maker</a></li>
+      <li><a href="https://www.getnews.co.kr/news/articleView.html?idxno=822549" target="_blank" rel="noopener">GetNews (Korea) — premium espresso</a></li>
+      <li><a href="https://daily.hankooki.com/news/articleView.html?idxno=1186608" target="_blank" rel="noopener">Hankooki Daily (Korea)</a></li>
+      <li><a href="https://www.bluewin.ch/en/news/14-million-thermomixes-sold-record-year-for-vorwerk-li.3243464" target="_blank" rel="noopener">Bluewin — 1.4M Thermomixes sold, record year</a></li>
+      <li><a href="https://www.infobae.com/america/agencias/2026/05/21/vorwerk-vendio-en-2025-record-de-14-millones-de-robots-de-cocina-thermomix/" target="_blank" rel="noopener">Infobae — Vorwerk 2025 record</a></li>
+      <li><a href="https://www.democrata.es/en/economy/vorwerk-achieves-record-turnover-in-2025-thanks-to-the-pull-of-thermomix-in-spain/" target="_blank" rel="noopener">Demócrata — Vorwerk Spain</a></li>
+      <li><a href="https://www.chinabaogao.com/detail/725468.html" target="_blank" rel="noopener">ChinaBaogao — China cooking robots</a></li>
+      <li><a href="https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026/" target="_blank" rel="noopener">NIQ — Home Appliances Outlook 2026</a></li>
+      <li><a href="https://nielseniq.com/global/en/news-center/2025/new-niq-report-quality-convenience-and-hygiene-to-drive-growth-in-home-appliances-market-in-2026/" target="_blank" rel="noopener">NIQ — 2026 home appliances drivers</a></li>
+      <li><a href="https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-western-europe/" target="_blank" rel="noopener">NIQ — Outlook 2026, Western Europe</a></li>
+      <li><a href="https://nielseniq.com/global/en/insights/report/2025/home-appliances-outlook-2026-eastern-europe-middle-east-africa/" target="_blank" rel="noopener">NIQ — Outlook 2026, Eastern Europe, ME &amp; Africa</a></li>
+      <li><a href="https://finance.sina.com.cn/tech/roll/2026-07-30/doc-inikqqha9687992.shtml" target="_blank" rel="noopener">Sina Finance — China kitchen appliances (Jul 2026)</a></li>
+      <li><a href="https://finance.sina.com.cn/tech/roll/2026-08-05/doc-inimhawm4663142.shtml" target="_blank" rel="noopener">Sina Finance — China kitchen appliances (Aug 2026)</a></li>
+      <li><a href="https://finance.sina.com.cn/tech/roll/2026-07-17/doc-iniiccuy4193294.shtml" target="_blank" rel="noopener">Sina Finance — China kitchen appliances (Jul 2026)</a></li>
+      <li><a href="https://finance.sina.com.cn/jjxw/2025-04-27/doc-ineurmis2722792.shtml" target="_blank" rel="noopener">Sina Finance — China kitchen appliances (Apr 2025)</a></li>
+      <li><a href="https://finance.sina.com.cn/stock/hyyj/2023-09-28/doc-imzphfwi3057276.shtml" target="_blank" rel="noopener">Sina Finance — China small appliances (Sep 2023)</a></li>
+      <li><a href="https://smarthome.ofweek.com/2026-07/ART-91009-12003-30695787.html" target="_blank" rel="noopener">OFweek — China kitchen appliances (Jul 2026)</a></li>
+      <li><a href="https://mp.ofweek.com/Internet/a056714790667" target="_blank" rel="noopener">OFweek — China kitchen appliances</a></li>
+      <li><a href="https://mp.ofweek.com/smarthome/a056714444697" target="_blank" rel="noopener">OFweek — China kitchen appliances</a></li>
+      <li><a href="https://m.cheaa.com/n_detail/w_646727.html" target="_blank" rel="noopener">CHEAA — China kitchen appliances, Q1 2025</a></li>
+      <li><a href="https://news.qq.com/rain/a/20250506A05QZP00" target="_blank" rel="noopener">Tencent News — China kitchen appliances (May 2025)</a></li>
+      <li><a href="https://news.qq.com/rain/a/20260904A0302Q00" target="_blank" rel="noopener">Tencent News — China kitchen appliances (Sep 2026)</a></li>
+      <li><a href="https://m.sohu.com/a/898960776_120096195" target="_blank" rel="noopener">Sohu — China kitchen appliances</a></li>
+      <li><a href="https://slickdeals.net/f/18883471-profile-ge-profile-opal-2-0-xl-with-1-gallon-tank-chewable-crunchable-countertop-nugget-ice-maker-400-fs-amazon" target="_blank" rel="noopener">Slickdeals — GE Profile Opal 2.0 XL pricing</a></li>
+      <li><a href="https://tech.yahoo.com/general/articles/ge-countertop-ice-maker-wifi-203341885.html" target="_blank" rel="noopener">Yahoo Tech — GE countertop ice maker</a></li>
+      <li><a href="https://www.datainsightsmarket.com/reports/nugget-ice-maker-646410" target="_blank" rel="noopener">Data Insights Market — nugget ice makers</a></li>
+      <li><a href="https://www.futuremarketinsights.com/reports/nugget-ice-machines-market" target="_blank" rel="noopener">Future Market Insights — nugget ice machines</a></li>
+      <li><a href="https://marketintelo.com/report/small-kitchen-appliances-market" target="_blank" rel="noopener">Market Intelo — small kitchen appliances</a></li>
+      <li><a href="https://dataintelo.com/report/global-small-kitchen-appliances-market" target="_blank" rel="noopener">Dataintelo — small kitchen appliances</a></li>
+      <li><a href="https://www.manilatimes.net/2025/11/13/tmt-newswire/lazada-drives-brand-success-as-lazmall-sales-grow-over-1000-on-1111-day-one/2222803" target="_blank" rel="noopener">Manila Times — Lazada 11.11 (Nov 2025)</a></li>
+      <li><a href="https://bworldonline.com/corporate/2025/11/06/710341/lazada-sees-surge-in-holiday-shopping-during-11-11-sale/" target="_blank" rel="noopener">BusinessWorld — Lazada 11.11 (Nov 2025)</a></li>
+    </ol>
+  </details>
 </section>
 
 <div class="ornament">· · ·</div>
